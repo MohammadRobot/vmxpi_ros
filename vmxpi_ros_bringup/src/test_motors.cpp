@@ -15,6 +15,8 @@
 #include <vmxpi_ros/Float.h>
 #include <cmath>
 
+//Created by Moahmmad Alshamsi
+
 static double motorLeftFrontSpeed, motorRightFrontSpeed, motorRightBackSpeed, motorLeftBackSpeed, rightFrontEncoder, rightBackEncoder, leftFrontEncoder, leftBackEncoder;
 static double leftFrontCount, rightFrontCount, rightBackCount, leftBackCount;
 static double ocv_motorLeftFrontSpeed, ocv_motorRightFrontSpeed, ocv_motorRightBackSpeed, ocv_motorLefttBackSpeed;
