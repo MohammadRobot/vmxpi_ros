@@ -179,7 +179,7 @@ add_dependencies(main_node
   	${PROJECT_NAME}_gencfg)
 
 
-add_executable(motor_node src/test_motor.cpp)
+add_executable(motor_node src/test_motors.cpp)
 target_link_libraries(motor_node PRIVATE
 	vmxpi_hal 
 	navx_ros_wrapper 
