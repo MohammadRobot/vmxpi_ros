@@ -507,33 +507,33 @@ int main(int argc, char **argv) {
     ros::AsyncSpinner spinner(4);
     spinner.start();
 
-    IOWatchdogROS watchdog(&nh, &vmx);
-    ROS_INFO("IOWatchdog is now started");
+    //IOWatchdogROS watchdog(&nh, &vmx);
+    //ROS_INFO("IOWatchdog is now started");
     
-    DigitalOutputROS d_o(&nh, &vmx, 10);
-    ROS_INFO("Digital Output is now started");
+    //DigitalOutputROS d_o(&nh, &vmx, 10);
+    //ROS_INFO("Digital Output is now started");
     
-    DigitalInputROS d_i(&nh, &vmx, 11);
-    ROS_INFO("Digital Input is now started");
+    //DigitalInputROS d_i(&nh, &vmx, 11);
+    //ROS_INFO("Digital Input is now started");
 
     TitanDriverROSWrapper titan(&nh, &vmx);
     ROS_INFO("Titan driver is now started");
 
-    navXROSWrapper navx(&nh, &vmx);
-    ROS_INFO("navX driver is now started");
+    //navXROSWrapper navx(&nh, &vmx);
+    //ROS_INFO("navX driver is now started");
 
-    CobraROS cobra(&nh, &vmx);
-    ROS_INFO("Cobra driver is now started");
+    //CobraROS cobra(&nh, &vmx);
+    //ROS_INFO("Cobra driver is now started");
 
-    SharpROS sharp(&nh, &vmx);
-    ROS_INFO("Sharp driver is now started");
+    //SharpROS sharp(&nh, &vmx);
+    //ROS_INFO("Sharp driver is now started");
 
-    ServoROS servo(&nh, &vmx, 13);
-    ROS_INFO("Servo driver is now started");
+    //ServoROS servo(&nh, &vmx, 13);
+    //ROS_INFO("Servo driver is now started");
 
-    UltrasonicROS ultrasonic(&nh, &vmx, 8, 9);
-    ROS_INFO("Ultrasonic driver is now started");
-    ultrasonic.Ultrasonic();
+    //UltrasonicROS ultrasonic(&nh, &vmx, 8, 9);
+    //ROS_INFO("Ultrasonic driver is now started");
+    //ultrasonic.Ultrasonic();
 
 
     //while (ros::ok()) { // Uncomment for OpenCV Cube Tracking Demo

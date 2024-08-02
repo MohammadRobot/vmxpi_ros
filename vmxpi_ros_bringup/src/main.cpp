@@ -19,6 +19,14 @@ int main(int argc, char **argv)
    
    ros::NodeHandle nh; //Internal reference to the ROS node that the program will use to interact with the ROS system
    VMXPi vmx(true, (uint8_t)50); //Realtime bool and the update rate to use for the VMXPi AHRS/IMU interface, default is 50hz within a valid range of 4-200Hz
+
+   //UltrasonicROS ultrasonic(&nh, &vmx, 8, 9); //channel_index_out(8), channel_index_in(9)
+   //ultrasonic.Ultrasonic(); //Sends an ultrasonic pulse for the ultrasonic object to read
+
+   // Use these to directly access data
+   //uint32_t raw_distance = ultrasonic.GetRawValue(); // returns distance in microseconds
+   // or can use
+   //uint32_t cm_distance = ultrasonic.GetDistanceCM(raw_distance); //converts microsecond distance from GetRawValue() to CM
     
    /**
     * START CODE HERE

@@ -21,10 +21,9 @@ UltrasonicROS::UltrasonicROS(ros::NodeHandle *nh, VMXPi *vmx, uint8_t channelout
 	digital_output_res_handle_index++;
 	
 	DIOConfig dio_config2;
-	if (!io->ActivateSinglechannelResource(VMXChannelInfo(channel_index_in, VMXChannelCapability::InterruptInput), &dio_config2, 
+	if (!io->ActivateSinglechannelResource(VMXChannelInfo(channel_index_in, VMXChannelCapability::DigitalInput), &dio_config2, 
 		digitalio_res_handles[digital_output_res_handle_index], &vmxerr)) {
 		printf("Error Activating Singlechannel Resource DIO for Channel index %d.\n", channel_index_in);
-		printf("Deu pau aqui!");
     DisplayVMXError(vmxerr);
 	} else {
 		ROS_INFO("Digital Input Channel %d activated on Resource type %d, index %d\n", channel_index_in,
@@ -35,9 +34,6 @@ UltrasonicROS::UltrasonicROS(ros::NodeHandle *nh, VMXPi *vmx, uint8_t channelout
 	if (!io->DIO_Set(digitalio_res_handles[0], false, &vmxerr)) 
 		DisplayVMXError(vmxerr);
 	
-	if(!io->Interrupt_SetEnabled(digitalio_res_handles[1], true, &vmxerr))
-		DisplayVMXError(vmxerr);
-
 	std::string topic_name = "channel/" + std::to_string(channelin) + "/ultrasonic/";
 	ultrasonic_cm_pub = nh->advertise<std_msgs::Float32>(topic_name + "dist/cm", 1);
 	ultrasonic_in_pub = nh->advertise<std_msgs::Float32>(topic_name + "dist/inch", 1);
