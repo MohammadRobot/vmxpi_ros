@@ -178,7 +178,7 @@ add_dependencies(main_node
 	digitalout_ros
   	${PROJECT_NAME}_gencfg)
 
-<<<<<<< HEAD
+
 	add_executable(test_titan_node  src/test_titan_node.cpp)
 	target_link_libraries(test_titan_node  PRIVATE
 		vmxpi_hal 
@@ -206,7 +206,7 @@ add_dependencies(main_node
 		digitalin_ros
 		digitalout_ros
 		${PROJECT_NAME}_gencfg)
-=======
+
 
 add_executable(motor_node src/test_motors.cpp)
 target_link_libraries(motor_node PRIVATE
@@ -235,4 +235,4 @@ add_dependencies(motor_node
 	digitalin_ros
 	digitalout_ros
 	${PROJECT_NAME}_gencfg)
->>>>>>> e0c6fd4ef57072d1afc5112699bba595bb116e46
+
