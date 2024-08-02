@@ -178,6 +178,7 @@ add_dependencies(main_node
 	digitalout_ros
   	${PROJECT_NAME}_gencfg)
 
+<<<<<<< HEAD
 	add_executable(test_titan_node  src/test_titan_node.cpp)
 	target_link_libraries(test_titan_node  PRIVATE
 		vmxpi_hal 
@@ -205,3 +206,33 @@ add_dependencies(main_node
 		digitalin_ros
 		digitalout_ros
 		${PROJECT_NAME}_gencfg)
+=======
+
+add_executable(motor_node src/test_motors.cpp)
+target_link_libraries(motor_node PRIVATE
+	vmxpi_hal 
+	navx_ros_wrapper 
+	titandriver_ros 
+	titandriver_ros_wrapper 
+	cobra_ros 
+	sharp_ros
+	servo_ros 
+	ultrasonic_ros
+	iowd_ros
+	digitalin_ros
+	digitalout_ros
+	${catkin_LIBRARIES}
+)
+add_dependencies(motor_node 
+	navx_ros_wrapper 
+	titandriver_ros 
+	titandriver_ros_wrapper 
+	cobra_ros 
+	sharp_ros
+	servo_ros 
+	ultrasonic_ros
+	iowd_ros
+	digitalin_ros
+	digitalout_ros
+	${PROJECT_NAME}_gencfg)
+>>>>>>> e0c6fd4ef57072d1afc5112699bba595bb116e46
